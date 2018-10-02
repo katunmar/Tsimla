@@ -1,8 +1,7 @@
 import re
 fin = open("26.07_all_new.txt", "r")
+fout = open("26.07_all_new_new.txt", "w")
 text = fin.read().split('\n')
-
-print text[52]
 
 a = []
 for i in range(52, len(text) - 1):
@@ -26,4 +25,4 @@ for i in range(0, len(a), 10):
     ans = a[i][0] 
     for j in range(0, len(a[i]) - 1):
         ans += '\t' + str(b[j] / 10.0)
-    print ans
+    fout.write(ans + '\n')
